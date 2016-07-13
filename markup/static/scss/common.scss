@@ -66,6 +66,7 @@ $padding: 10px;
 
 //Переменные для миксина flex
 $sb: space-between;
+$fs: flex-start;
 $c: center;
 $w: wrap;
 $nw: nowrap;
@@ -79,7 +80,9 @@ $nw: nowrap;
 }
 
 @mixin width($column) {
-  width: $width-full / $column;
+
+
+  width: $width-full / 12 * $column;
   padding-left: $padding;
   padding-right: $padding;
   box-sizing: border-box;
@@ -95,7 +98,7 @@ $nw: nowrap;
 
 
   &__item {
-    @include width(4);
+    @include width(3);
     margin-bottom: 20px;
   }
 
@@ -111,13 +114,13 @@ $nw: nowrap;
 
 
 .textbox {
-  @include flex($sb,null,$w);
+  @include flex($fs,null,$w);
 
   &_left {
-    @include width(1.5);
+    @include width(6);
   }
 
   &_right {
-    @include width(3);
+    @include width(6);
   }
 }
