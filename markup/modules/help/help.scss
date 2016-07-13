@@ -1,0 +1,81 @@
+//Переменные для модуля
+$font-size: 14px;
+
+
+.help {
+  padding: 15px 0;
+  background: url(../img/general/help-bg.jpg);
+  background-size: cover;
+}
+
+.info {
+  float: left;
+}
+
+.lk-icon-block {
+  float: right;
+}
+
+//Стили для блока инфо
+.info__list {
+  padding: 0;
+}
+
+.info__item {
+  display: inline-block;
+  font-size: $font-size;
+}
+
+//Стили для блока иконок
+.lk-icon__link {
+  display: block;
+  opacity: 1;
+  transition: .3s;
+
+  &:hover {
+    opacity: .6;
+    transition: .3s;
+    transform: scale(1.1);
+  }
+}
+
+.lk-icon__list {
+  padding: 0;
+}
+
+.lk-icon__item {
+  display: inline-block;
+  margin-left: 10px;
+  position: relative;
+
+  &:first-child {
+    margin: 0;
+  }
+}
+
+.lk-icon {
+  @include bg($lk-icon);
+}
+
+.wh-icon {
+  @include bg($wh-icon);
+}
+
+.c-icon {
+  @include bg($cart-icon);
+}
+
+.lk-icon__quantity {
+  font-size: 12px;
+    background: red;
+    display: block;
+    color: #fff;
+    position: absolute;
+    right: -5px;
+    bottom: -5px;
+    border-radius: 50%;
+    height: 15px;
+    width: 15px;
+    text-align: center;
+    line-height: 16px;
+}
