@@ -2,7 +2,6 @@ doctype html
 html(class="no-js", lang="ru")
 
     include ../modules/head/head
-    include ../modules/help/help
     include ../modules/footer/footer
 
     head
@@ -11,46 +10,75 @@ html(class="no-js", lang="ru")
         |%=symbols=%
 
 
-        section.s-block
+        header.header
           .container
-            
-            .block
-            
-              .block__item
-                figure.block__content
-                  .block__imgbox
-                    img.block__img(src="http://avtovesti.com/wp-content/uploads/2015/03/lamborghini-huracan-wheels-tuning-vossen-1.jpg")
-                  figcaption.block__name
-                    a.block__link(href="#") Название
-              
-              .block__item
-                figure.block__content
-                  .block__imgbox
-                    img.block__img(src="http://avtovesti.com/wp-content/uploads/2015/03/lamborghini-huracan-wheels-tuning-vossen-1.jpg")
-                  figcaption.block__name
-                    a.block__link(href="#") Название
-              
-              .block__item
-                figure.block__content
-                  .block__imgbox
-                    img.block__img(src="http://avtovesti.com/wp-content/uploads/2015/03/lamborghini-huracan-wheels-tuning-vossen-1.jpg")
-                  figcaption.block__name
-                    a.block__link(href="#") Название
-              
-              .block__item
-                figure.block__content
-                  .block__imgbox
-                    img.block__img(src="http://avtovesti.com/wp-content/uploads/2015/03/lamborghini-huracan-wheels-tuning-vossen-1.jpg")
-                  figcaption.block__name
-                    a.block__link(href="#") Название
-                    
-              
-              .textbox
-                .textbox__item.textbox_left
-                  p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+            .header-box
+              .top
+                .logo
+                  a.logo__link(href="#") Лого
                 
-                .textbox__item.textbox_right
+                .nav
+                  ul.nav__list
+                    li.nav__item
+                      a.nav__link(href="#") Ссылка
+                    li.nav__item
+                      a.nav__link(href="#") Ссылка
+                    li.nav__item
+                      a.nav__link(href="#") Ссылка
+                    li.nav__item
+                      a.nav__link(href="#") Ссылка
+                    li.nav__item
+                      a.nav__link(href="#") Ссылка
+              .text
+                p Таким образом укрепление и развитие структуры влечет за собой процесс внедрения и модернизации направлений прогрессивного развития. Значимость этих проблем настолько очевидна, что консультация с широким активом способствует подготовки и реализации новых предложений. Таким образом постоянное информационно-пропагандистское обеспечение нашей деятельности играет важную роль в формировании форм развития. Повседневная практика показывает, что новая модель организационной деятельности влечет за собой процесс внедрения и модернизации направлений прогрессивного развития. Таким образом рамки и место обучения кадров играет важную роль в формировании дальнейших направлений развития. Задача организации, в особенности же новая модель организационной деятельности в значительной степени обуславливает создание систем массового участия.
+              
+              .btn
+                a(href="#").btn__link Кнопка
+        
+        section.serv
+          .container
+            .section-title
+              h2.section-title__name Услуги
+            
+            .serv-box
+              .serv-box__item
+                h3.serv-box__title Название услуги
+                .serv-box__text
                   p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+              .serv-box__item
+                h3.serv-box__title Название услуги
+                .serv-box__text
+                  p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+              .serv-box__item
+                h3.serv-box__title Название услуги
+                .serv-box__text
+                  p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+              .serv-box__item
+                h3.serv-box__title Название услуги
+                .serv-box__text
+                  p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+            
+            .serv-btn
+              a(href="#") Это кнопка
+        
+        section.info
+          .info-box
+            .info-box__item
+              img.info-box__img(src="https://yandex.ru/images/today?size=1920x1080")
+            .info-box__item
+              h3 Это заголовок
+              p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+              p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        
+        section.rev
+          .container
+            .section-title
+              h2.section-title__name Это текст
+            .rev-box
+              .rev-box__text
+                p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        
+      
 
         script(src='%=static=%js/separate-js/svg4everybody.min.js')
         script svg4everybody();

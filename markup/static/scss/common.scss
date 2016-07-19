@@ -1,66 +1,4 @@
-// $width: 1000px;
-// $padding: 10px;
-//
-// @mixin flex($jus-cont) {
-//   display: flex;
-//   flex-wrap: wrap;
-//   justify-content: $jus-cont;
-// }
-//
-// @mixin width($column) {
-//   width: $width / $column;
-//   padding-left: $padding;
-//   padding-right: $padding;
-//   box-sizing: border-box;
-// }
-//
-// .container {
-//   width: $width;
-//   margin: 0 auto;
-//   padding: 0 $padding;
-// }
-//
-// .block {
-//
-//   @include flex(space-between);
-//
-//   &__item {
-//     @include width(3);
-//     margin-bottom: 20px;
-//   }
-//
-//   &__imgbox {
-//     width: 100%;
-//   }
-//
-//   &__img {
-//     width: 100%;
-//     height: auto;
-//   }
-// }
-//
-// .new {
-//   margin-left: -$padding;
-//   margin-right: -$padding;
-//
-//   @include flex(flex-start);
-//
-//   &__left {
-//     @include width(3);
-//   }
-//
-//   &__right {
-//     @include width(1.5);
-//   }
-// }
-//
-// .text {
-//   @include flex(space-between);
-//   @include width(1);
-// }
-
-
-$width: 1000px;
+$width: 90%;
 $width-full: 100%;
 $padding: 10px;
 
@@ -70,57 +8,136 @@ $fs: flex-start;
 $c: center;
 $w: wrap;
 $nw: nowrap;
+$col: column;
 
 
-@mixin flex($jus-con,$items,$wrap) {
+@mixin flex($jus-con,$items,$wrap,$flex-d) {
   display: flex;
   justify-content: $jus-con;
   align-items: $items;
   flex-wrap: $wrap;
+  flex-direction: $flex-d;
 }
 
 @mixin width($column) {
-
-
   width: $width-full / 12 * $column;
   padding-left: $padding;
   padding-right: $padding;
   box-sizing: border-box;
 }
 
+@mixin width2 ($lg,$md,$sm,$xs) {
+
+  padding-left: $padding;
+  padding-right: $padding;
+  box-sizing: border-box;
+
+
+
+  //Small devices (tablets, 768px and up)
+  @media (min-width: 768px) {
+    width: $width-full / 12 * $sm;
+  }
+
+  //Medium devices (desktops, 992px and up)
+  @media (min-width: 992px) {
+    width: $width-full / 12 * $md;
+  }
+
+  //Large devices (large desktops, 1200px and up)
+  @media (min-width: 1200px) {
+    width: $width-full / 12 * $lg;
+  }
+
+}
+
+
 .container {
   width: $width;
   margin: 0 auto;
 }
 
-.block {
-  @include flex($sb,null,$w);
+// .block {
+//   @include flex($sb,null,$w);
+//
+//
+//   &__item {
+//     @include width2(3,6,12,0);
+//     margin-bottom: 20px;
+//   }
+//
+//   &__imgbox {
+//     //height: 250px;
+//   }
+//
+//   &__img {
+//     width: 100%;
+//     height: auto;
+//   }
+// }
 
+html, body {
+  height: 100%;
+}
 
-  &__item {
-    @include width(3);
-    margin-bottom: 20px;
-  }
+.header {
+  background: url('https://yandex.ru/images/today?size=1920x1080') top center no-repeat;
 
-  &__imgbox {
-    //height: 250px;
-  }
+  height: 80%;
 
-  &__img {
-    width: 100%;
-    height: auto;
+  .container {
+    height: 100%;
   }
 }
 
+.top {
+  @include flex($sb,$c,null,null);
+}
 
-.textbox {
-  @include flex($fs,null,$w);
+.nav__item {
+  display: inline-block;
+}
 
-  &_left {
-    @include width(6);
-  }
 
-  &_right {
-    @include width(6);
-  }
+.header-box {
+  height: 100%;
+  @include flex($sb,null,null,$col);
+}
+
+.section-title {
+  font-size: 36px;
+  @include flex($c,null,null,null);
+}
+
+.serv {
+  margin-bottom: 50px;
+}
+
+.serv-box {
+  @include flex($sb,null,$w,null);
+}
+
+.serv-box__item {
+  @include width2(3,6,6,12);
+}
+
+.serv-box__title {
+  font-size: 24px;
+}
+
+.serv-btn {
+  @include flex($c,null,null,null);
+}
+
+
+.info-box  {
+  @include flex($sb,$c,$w,null);
+}
+
+.info-box__item {
+  @include width2(6,6,6,12);
+}
+
+.info-box__img {
+  width: 100%;
 }
