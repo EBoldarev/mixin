@@ -31,42 +31,37 @@
 }
 
 // You can add your own mixins here:
-// @mixin flex($jus-con,$items,$wrap,$flex-d) {
-//     display: flex;
-//     justify-content: $jus-con;
-//     align-items: $items;
-//     flex-wrap: $wrap;
-//     flex-direction: $flex-d;
-// }
 
-// @mixin width($column) {
-//     width: $width-full / 12 * $column;
-//     padding-left: $padding;
-//     padding-right: $padding;
-//     box-sizing: border-box;
-// }
+//Переменные для сетки
+$max-width: 100%;
+// количество элементов
+$items: 12;
 
-// @mixin width2 ($lg,$md,$sm,$xs) {
+$breakpoints: (
+  xs: 320px,
+  sm: 768px,
+  md: 992px,
+  lg: 1200px,
+  xl: 1440px,
+  xx: 1680px
+);
 
-//     padding-left: $padding;
-//     padding-right: $padding;
-//     box-sizing: border-box;
+@mixin break($size) {  
+  @media (min-width: map-get($breakpoints, $size)) {
+    @content;
+  }
+}
 
+@each $key, $val in $breakpoints {
 
+  @for $i from 1 through $items {
+    .w_#{$key}-#{$i} {
+      @include break($key) {
+        padding: 0 10px;
+        box-sizing: border-box;
+        width: $max-width / $items * $i;
+      }
+    }
+  }
 
-//     //Small devices (tablets, 768px and up)
-//     @media (min-width: 768px) {
-//         width: $width-full / 12 * $sm;
-//     }
-
-//     //Medium devices (desktops, 992px and up)
-//     @media (min-width: 992px) {
-//         width: $width-full / 12 * $md;
-//     }
-
-//     //Large devices (large desktops, 1200px and up)
-//     @media (min-width: 1200px) {
-//         width: $width-full / 12 * $lg;
-//     }
-
-// }
+}
