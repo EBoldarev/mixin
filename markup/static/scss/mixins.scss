@@ -31,3 +31,42 @@
 }
 
 // You can add your own mixins here:
+// @mixin flex($jus-con,$items,$wrap,$flex-d) {
+//     display: flex;
+//     justify-content: $jus-con;
+//     align-items: $items;
+//     flex-wrap: $wrap;
+//     flex-direction: $flex-d;
+// }
+
+// @mixin width($column) {
+//     width: $width-full / 12 * $column;
+//     padding-left: $padding;
+//     padding-right: $padding;
+//     box-sizing: border-box;
+// }
+
+// @mixin width2 ($lg,$md,$sm,$xs) {
+
+//     padding-left: $padding;
+//     padding-right: $padding;
+//     box-sizing: border-box;
+
+
+
+//     //Small devices (tablets, 768px and up)
+//     @media (min-width: 768px) {
+//         width: $width-full / 12 * $sm;
+//     }
+
+//     //Medium devices (desktops, 992px and up)
+//     @media (min-width: 992px) {
+//         width: $width-full / 12 * $md;
+//     }
+
+//     //Large devices (large desktops, 1200px and up)
+//     @media (min-width: 1200px) {
+//         width: $width-full / 12 * $lg;
+//     }
+
+// }

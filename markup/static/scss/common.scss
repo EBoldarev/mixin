@@ -1,143 +1,232 @@
-$width: 90%;
-$width-full: 100%;
-$padding: 10px;
+$max-width: 100%;
+$max-cols: 12;
 
-//Переменные для миксина flex
-$sb: space-between;
-$fs: flex-start;
-$c: center;
-$w: wrap;
-$nw: nowrap;
-$col: column;
+// sx: < sm
+$media: (lg: 1200px, md: 992px, sm: 768px, sx: 320px);
 
-
-@mixin flex($jus-con,$items,$wrap,$flex-d) {
-  display: flex;
-  justify-content: $jus-con;
-  align-items: $items;
-  flex-wrap: $wrap;
-  flex-direction: $flex-d;
+@mixin width($col) {
+  width: $max-width / $max-cols * $col;
 }
 
-@mixin width($column) {
-  width: $width-full / 12 * $column;
-  padding-left: $padding;
-  padding-right: $padding;
-  box-sizing: border-box;
-}
+// @mixin width-media($param) {
+//   @each $med, $col in $param {
 
-@mixin width2 ($lg,$md,$sm,$xs) {
-
-  padding-left: $padding;
-  padding-right: $padding;
-  box-sizing: border-box;
-
-
-
-  //Small devices (tablets, 768px and up)
-  @media (min-width: 768px) {
-    width: $width-full / 12 * $sm;
-  }
-
-  //Medium devices (desktops, 992px and up)
-  @media (min-width: 992px) {
-    width: $width-full / 12 * $md;
-  }
-
-  //Large devices (large desktops, 1200px and up)
-  @media (min-width: 1200px) {
-    width: $width-full / 12 * $lg;
-  }
-
-}
-
-
-.container {
-  width: $width;
-  margin: 0 auto;
-}
-
-// .block {
-//   @include flex($sb,null,$w);
-//
-//
-//   &__item {
-//     @include width2(3,6,12,0);
-//     margin-bottom: 20px;
-//   }
-//
-//   &__imgbox {
-//     //height: 250px;
-//   }
-//
-//   &__img {
-//     width: 100%;
-//     height: auto;
+//     @if $med == "lg" {
+//       @media (min-width: map-get($media, "lg")) {
+//         @include width($col);
+//       }
+//     }
+//     @else if $med == "md" {
+//       @media (min-width: map-get($media, "md")) {
+//         @include width($col);
+//       }
+//     }
+//     @else if $med == "sm" {
+//       @media (min-width: map-get($media, "sm")) {
+//         @include width($col);
+//       }
+//     }
+//     @else if $med == "sx" {
+//       @media (max-width: map-get($media, "sx")) {
+//         @include width($col);
+//       }
+//     }
+//     @else {
+//       @include width($col);
+//     }
 //   }
 // }
 
-html, body {
-  height: 100%;
-}
+// @mixin respond-to($media) {
+//   @if $media == handhelds {
+//     @media only screen and (max-width: 479px) { @content; }
+//   }
+//   @else if $media == wide-handhelds {
+//     @media only screen and (min-width: 480px) and (max-width: 767px) { @content; }
+//   }
+//   @else if $media == tablets {
+//     @media only screen and (min-width: 768px) and (max-width: 959px) { @content; }
+//   }
+//   @else if $media == laptop {
+//     @media only screen and (min-width: 959px) and (max-width: 1200px) { @content; }
+//   }
+//   @else if $media == desktop {
+//     @media only screen and (min-width: 1200px) and (max-width: 1366px) { @content; }
+//   }
+//   @else if $media == bigdesktop {
+//     @media only screen and (min-width: 1366px) and (max-width: 1920px) { @content; }
+//   }
+// }
 
-.header {
-  background: url('https://yandex.ru/images/today?size=1920x1080') top center no-repeat;
 
-  height: 80%;
 
-  .container {
-    height: 100%;
+// @for $i from 1 through 12 {
+//   .w_lg-#{$i} {
+//     @include respond-to(bigdesktop) {
+//       width: $max-width / 12 * $i;
+//     };
+//     padding-left: $padding;
+//     padding-right: $padding;
+//     box-sizing: border-box;
+//   }
+// }
+
+// @for $i from 1 through 12 {
+//   .w_md-#{$i} {
+//     @include respond-to(desktop) {
+//       width: $max-width / 12 * $i;
+//     };
+//     padding-left: $padding;
+//     padding-right: $padding;
+//     box-sizing: border-box;
+//   }
+// }
+
+// @for $i from 1 through 12 {
+//   .w_sm-#{$i} {
+//     @include respond-to(laptop) {
+//       width: $max-width / 12 * $i;
+//     };
+//     padding-left: $padding;
+//     padding-right: $padding;
+//     box-sizing: border-box;
+//   }
+// }
+
+// @for $i from 1 through 12 {
+//   .w_xs-#{$i} {
+//     @include respond-to(tablets) {
+//       width: $max-width / 12 * $i;
+//     };
+//     padding-left: $padding;
+//     padding-right: $padding;
+//     box-sizing: border-box;
+//   }
+// }
+
+// @for $i from 1 through 12 {
+//   .w_xs-#{$i} {
+//     @include respond-to(wide-handhelds) {
+//       width: $max-width / 12 * $i;
+//     };
+//     padding-left: $padding;
+//     padding-right: $padding;
+//     box-sizing: border-box;
+//   }
+// }
+
+// @for $i from 1 through 12 {
+//   .w_xs-#{$i} {
+//     @include respond-to(handhelds) {
+//       width: $max-width / 12 * $i;
+//     };
+//     padding-left: $padding;
+//     padding-right: $padding;
+//     box-sizing: border-box;
+//   }
+// }
+
+
+
+// .box {
+//   display: flex;
+//   flex-wrap: wrap;
+
+//   @include respond-to(bigdesktop) {
+//     font-size: 24px;
+//   };
+
+//   @include respond-to(desktop) {
+//     font-size: 22px;
+//   };
+
+//   @include respond-to(laptop) {
+//     font-size: 18px;
+//     color: red;
+//   };
+
+//   @include respond-to(tablets) {
+//     font-size: 16px;
+//   };
+
+//   @include respond-to(wide-handhelds) {
+//     font-size: 14px;
+//   };
+
+//   @include respond-to(handhelds) {
+//     font-size: 12px;
+//   };
+
+//   // &__item {
+//   //   @include width-media((lg: 3, md: 3, sm: 6, sx: 12));
+//   // }
+// }
+
+
+
+// Sass map
+$colors: (
+  primary: #333,
+  secondary: #555,
+  brand: #ff0033
+);
+
+// .box {
+//   color: map-get($colors, primary);
+// }
+
+$breakpoints: (
+  xs: 448px,
+  sm: 672px,
+  md: 1008px,
+  lg: 1344px,
+  xl: 1428px,
+  xx: 1680px
+);
+
+@mixin break($size) {  
+  @media (min-width: map-get($breakpoints, $size)) {
+    @content;
   }
 }
 
-.top {
-  @include flex($sb,$c,null,null);
+// .box {
+//   @include break(xx) {
+//     font-size: 24px;
+//   }
+// }
+
+
+// @each $key, $value in $breakpoints {
+//   .item-#{$key} {
+//     color: $value;
+//   }
+// }
+
+// количество элементов
+$items: 12;
+
+// grid container
+.grid {
+  display: flex;
+  flex-flow: row wrap;
 }
 
-.nav__item {
-  display: inline-block;
+@each $key, $value in $breakpoints {
+
+  @for $i from 1 through $items {
+    .w_#{$key}-#{$i} {
+      @include break($key) {
+        //flex: 0 0 #{$i / $items * 100}%;
+        width: $max-width / $items * $i;
+      }
+    }
+  }
+
 }
 
+.box {
 
-.header-box {
-  height: 100%;
-  @include flex($sb,null,null,$col);
+
 }
 
-.section-title {
-  font-size: 36px;
-  @include flex($c,null,null,null);
-}
-
-.serv {
-  margin-bottom: 50px;
-}
-
-.serv-box {
-  @include flex($sb,null,$w,null);
-}
-
-.serv-box__item {
-  @include width2(3,6,6,12);
-}
-
-.serv-box__title {
-  font-size: 24px;
-}
-
-.serv-btn {
-  @include flex($c,null,null,null);
-}
-
-
-.info-box  {
-  @include flex($sb,$c,$w,null);
-}
-
-.info-box__item {
-  @include width2(6,6,6,12);
-}
-
-.info-box__img {
-  width: 100%;
-}
