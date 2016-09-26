@@ -10,14 +10,47 @@ html(class="no-js", lang="ru")
         |%=symbols=%
 
 
-        header.header
-          .container
-            .main
-            .box.flex
-              .box__item.xx6.l6.g12.md6.sm12.xs12
-                p.color.font Сайт рыбатекст поможет дизайнеру, верстальщику, вебмастеру сгенерировать несколько абзацев более менее осмысленного текста
-              .box__item.xx6.l6.g12.md6.sm12.xs12
-                p Сайт рыбатекст поможет дизайнеру, верстальщику, вебмастеру сгенерировать несколько абзацев более менее осмысленного текста
+        // g- сетка
+        // b- блок
+        // s- структурный блок
+        
+        header.s-header
+          .s-contaiten
+            .g-flex.g-flex_align-center
+              .xx4.l4.g4.md4.sm12.xs12
+                .header-logo
+                  a(href="#").header__link Лого
+              .xx8.l8.g18.md8.sm12.xs12
+                .nav.nav_header
+                  ul.nav__list.nav_header-list
+                    li.nav__item
+                      a.nav__link(href="#") Главная
+                    li.nav__item
+                      a.nav__link(href="#") Новости
+                    li.nav__item
+                      a.nav__link(href="#") Услуги
+                    li.nav__item
+                      a.nav__link(href="#") Блог
+                    li.nav__item
+                      a.nav__link(href="#") Контакты
+        
+        main.s-main
+          .s-contaiten
+            .g-flex
+              .xx4.l4.g4.md4.sm12.xs12
+                h3 Левый блок
+              .xx8.l8.g8.md8.sm12.xs12
+                h3 Правый блок
+            
+
+        //- header.header
+        //-   .container
+        //-     .main
+        //-     .box.flex
+        //-       .box__item.xx6.l6.g12.md6.sm12.xs12
+        //-         p.color.font Сайт рыбатекст поможет дизайнеру, верстальщику, вебмастеру сгенерировать несколько абзацев более менее осмысленного текста
+        //-       .box__item.xx6.l6.g12.md6.sm12.xs12
+        //-         p Сайт рыбатекст поможет дизайнеру, верстальщику, вебмастеру сгенерировать несколько абзацев более менее осмысленного текста
 
               
         script(src='%=static=%js/separate-js/svg4everybody.min.js')

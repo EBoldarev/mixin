@@ -61,11 +61,17 @@ $max-breakpoints: (
   }
 }
 
+@mixin break-min($size) {
+  @media (min-width: map-get($breakpoints, $size)) {
+    @content;
+  }
+}
+
 @each $key, $val in $breakpoints {
 
   @for $i from 1 through $items {
     .#{$key}#{$i} {
-      @include break($key) {
+      @include break-min($key) {
         padding: 0 10px;
         box-sizing: border-box;
         width: $max-width / $items * $i;

@@ -4,7 +4,26 @@
   margin: 0 -10px;
 }
 
-.container {
+.g-flex {
+  display: flex;
+  margin: 0 -10px;
+  flex-wrap: wrap;
+}
+
+.g-flex_row {
+  justify-content: flex-start;
+}
+
+.g-flex_align-center {
+  align-items: center;
+}
+
+.g-flex_full-center {
+  justify-content: center;
+  align-items: center;
+}
+
+.s-contaiten {
   padding: 0 10px;
   margin: 0 auto;
   width: $wigth;
@@ -12,33 +31,65 @@
 
 
 
-.color {
-    
-    @include break(lg) {
-        color: #444;
-    }
-    
-    @include break(sm) {
-        color: #444;
-    }
-    
-    @include break(xs) {
-        color: red;
-    }
+
+//Стили для страницы
+
+//Шапка
+.s-header {
+  padding: 15px 0;
+  border-bottom: 2px solid #444;
 }
 
-.font {
-    
-    @include break(lg) {
-        font-size: 24px;
-        display: none;
-    }
-    
-    @include break(sm) {
-        font-size: 54px;
-    }
-    
-    @include break(xs) {
-        font-size: 14px;
-    }
+//Лого
+.header__link {
+  font-size: 24px;
+  text-transform: uppercase;
+  color: #444;
+  text-decoration: none;
 }
+
+//Навигация
+.nav__list {
+  padding: 0;
+  margin: 0;
+}
+
+.nav_header-list {
+
+  .nav__item {
+    display: inline-block;
+  }
+}
+
+
+
+// .color {
+//
+//     @include break(lg) {
+//         color: #444;
+//     }
+//
+//     @include break(sm) {
+//         color: #444;
+//     }
+//
+//     @include break(xs) {
+//         color: red;
+//     }
+// }
+//
+// .font {
+//
+//     @include break(lg) {
+//         font-size: 24px;
+//         display: none;
+//     }
+//
+//     @include break(sm) {
+//         font-size: 54px;
+//     }
+//
+//     @include break(xs) {
+//         font-size: 14px;
+//     }
+// }
