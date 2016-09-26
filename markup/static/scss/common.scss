@@ -9,3 +9,36 @@
   margin: 0 auto;
   width: $wigth;
 }
+
+
+
+.color {
+    
+    @include break(lg) {
+        color: #444;
+    }
+    
+    @include break(sm) {
+        color: #444;
+    }
+    
+    @include break(xs) {
+        color: red;
+    }
+}
+
+.font {
+    
+    @include break(lg) {
+        font-size: 24px;
+        display: none;
+    }
+    
+    @include break(sm) {
+        font-size: 54px;
+    }
+    
+    @include break(xs) {
+        font-size: 14px;
+    }
+}
