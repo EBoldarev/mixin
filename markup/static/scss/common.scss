@@ -29,6 +29,12 @@
   width: $wigth;
 }
 
+//Модификаторы
+.color_red {
+  color: red;
+}
+
+
 
 
 
@@ -52,12 +58,39 @@
 .nav__list {
   padding: 0;
   margin: 0;
+  list-style: none;
 }
 
-.nav_header-list {
+.nav_defaul {
 
   .nav__item {
     display: inline-block;
+  }
+}
+
+.nav_header {
+
+  .nav__item {
+    display: inline-block;
+  }
+}
+
+
+.aside_header {
+  list-style: none;
+
+  .nav__item {
+    border-top: 1px dotted red;
+
+    &:first-child {
+      border: none;
+    }
+  }
+
+  .nav__link {
+    padding: 5px 0;
+    display: block;
+    text-decoration: none;
   }
 }
 

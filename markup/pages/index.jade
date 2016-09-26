@@ -2,6 +2,7 @@ doctype html
 html(class="no-js", lang="ru")
 
     include ../modules/head/head
+    //include ../modules/nav/bav
     include ../modules/footer/footer
 
     head
@@ -22,7 +23,7 @@ html(class="no-js", lang="ru")
                   a(href="#").header__link Лого
               .xx8.l8.g18.md8.sm12.xs12
                 .nav.nav_header
-                  ul.nav__list.nav_header-list
+                  ul.nav__list
                     li.nav__item
                       a.nav__link(href="#") Главная
                     li.nav__item
@@ -39,8 +40,52 @@ html(class="no-js", lang="ru")
             .g-flex
               .xx4.l4.g4.md4.sm12.xs12
                 h3 Левый блок
+                .nav.aside_header
+                  ul.nav__list
+                    li.nav__item
+                      a.nav__link(href="#") Главная
+                    li.nav__item
+                      a.nav__link(href="#") Новости
+                    li.nav__item
+                      a.nav__link(href="#") Услуги
+                    li.nav__item
+                      a.nav__link(href="#") Блог
+                    li.nav__item
+                      a.nav__link(href="#") Контакты
+              
+              
+                      
               .xx8.l8.g8.md8.sm12.xs12
                 h3 Правый блок
+                .g-flex
+                  .xx3.l3.g3.md6.sm12.xs12
+                    .work
+                      .work__text
+                        p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                  .xx3.l3.g3.md6.sm12.xs12
+                    .work
+                      .work__text
+                        p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                  .xx3.l3.g3.md6.sm12.xs12
+                    .work
+                      .work__text
+                        p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                  .xx3.l3.g3.md6.sm12.xs12
+                    .work
+                      .work__text
+                        p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                .nav.nav_defaul
+                  ul.nav__list
+                    li.nav__item
+                      a.nav__link(href="#") Главная
+                    li.nav__item
+                      a.nav__link(href="#") Новости
+                    li.nav__item
+                      a.nav__link(href="#") Услуги
+                    li.nav__item
+                      a.nav__link(href="#") Блог
+                    li.nav__item
+                      a.nav__link(href="#") Контакты
             
 
         //- header.header
@@ -51,6 +96,15 @@ html(class="no-js", lang="ru")
         //-         p.color.font Сайт рыбатекст поможет дизайнеру, верстальщику, вебмастеру сгенерировать несколько абзацев более менее осмысленного текста
         //-       .box__item.xx6.l6.g12.md6.sm12.xs12
         //-         p Сайт рыбатекст поможет дизайнеру, верстальщику, вебмастеру сгенерировать несколько абзацев более менее осмысленного текста
+        
+        
+        //- .work
+        //-   .work__item
+        //-     p Текст
+        //-   .work__item
+        //-     p Текст
+        //-   .work__item
+        //-     p Текст
 
               
         script(src='%=static=%js/separate-js/svg4everybody.min.js')
