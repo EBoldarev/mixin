@@ -35,7 +35,7 @@
 //Переменные для сетки
 $max-width: 100%;
 // количество элементов
-$items: 12;
+$max-cols: 12;
 
 $breakpoints: (
   xs: 320px,
@@ -67,15 +67,71 @@ $max-breakpoints: (
   }
 }
 
-@each $key, $val in $breakpoints {
+// @each $key, $val in $breakpoints {
+//
+//   @for $i from 1 through $items {
+//     .#{$key}#{$i} {
+//       @include break-min($key) {
+//         padding: 0 10px;
+//         box-sizing: border-box;
+//         width: $max-width / $items * $i;
+//       }
+//     }
+//   }
+// }
 
-  @for $i from 1 through $items {
-    .#{$key}#{$i} {
-      @include break-min($key) {
-        padding: 0 10px;
-        box-sizing: border-box;
-        width: $max-width / $items * $i;
-      }
-    }
-  }
+$media: (xx: 1920px, lg: 1200px, md: 992px, sm: 768px, sx: 320px);
+
+// @mixin width($col) {
+//   flex-basis: $max-width / $max-cols * $col;
+// }
+
+@mixin width($col) {
+  width: $max-width / $max-cols * $col;
 }
+
+ @mixin width-media($param) {
+   @each $med, $col in $param {
+
+     @if $med == "xx" {
+       @media (max-width: map-get($media, "xx")) {
+         @include width($col);
+         padding: 10px;
+         box-sizing: border-box;
+       }
+     }
+     @if $med == "lg" {
+       @media (max-width: map-get($media, "lg")) {
+         @include width($col);
+         padding: 10px;
+         box-sizing: border-box;
+       }
+     }
+     @else if $med == "md" {
+       @media (max-width: map-get($media, "md")) {
+         @include width($col);
+         padding: 10px;
+         box-sizing: border-box;
+       }
+     }
+     @else if $med == "sm" {
+       @media (max-width: map-get($media, "sm")) {
+         @include width($col);
+         padding: 10px;
+         box-sizing: border-box;
+       }
+     }
+     @else if $med == "sx" {
+       @media (max-width: map-get($media, "sx")) {
+         @include width($col);
+         padding: 10px;
+         box-sizing: border-box;
+       }
+     }
+     @else {
+       @include width($col);
+       padding: 10px;
+       box-sizing: border-box;
+     }
+   }
+ }
