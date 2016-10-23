@@ -126,3 +126,17 @@
 //         font-size: 14px;
 //     }
 // }
+
+
+.test-box {
+  margin: 200px;
+  height: 200px;
+  width: 200px;
+  background: red;
+  transition: .3s;
+
+  &:hover {
+      transform: rotateY(360deg);
+
+  }
+}
